@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6AC99260-99B2-4CDC-9264-31E207CC266A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>sqlFormat</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;CURL_STATICLIB;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\notepad;include\json;include\curl;include\collection</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>lib;..\..\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;CURL_STATICLIB;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\notepad;include\json;include\curl;include\collection</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>lib;..\..\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcurl.lib;ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cJSON.c" />
+    <ClCompile Include="src\comparer.c" />
+    <ClCompile Include="src\cstring.c" />
+    <ClCompile Include="src\c_algo.c" />
+    <ClCompile Include="src\c_function.c" />
+    <ClCompile Include="src\c_iterator.c" />
+    <ClCompile Include="src\c_list.c" />
+    <ClCompile Include="src\c_map.c" />
+    <ClCompile Include="src\c_memory.c" />
+    <ClCompile Include="src\c_pair.c" />
+    <ClCompile Include="src\c_queue.c" />
+    <ClCompile Include="src\c_set.c" />
+    <ClCompile Include="src\c_stack.c" />
+    <ClCompile Include="src\c_tree.c" />
+    <ClCompile Include="src\c_vector.c" />
+    <ClCompile Include="src\Format.cpp" />
+    <ClCompile Include="src\lifo_stack.c" />
+    <ClCompile Include="src\linked_list.c" />
+    <ClCompile Include="src\memento.c" />
+    <ClCompile Include="src\PluginDefinition.cpp" />
+    <ClCompile Include="src\sqlFormat.c" />
+    <ClCompile Include="src\tree_map.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\collection\collection.h" />
+    <ClInclude Include="include\collection\comparer.h" />
+    <ClInclude Include="include\collection\cstring.h" />
+    <ClInclude Include="include\collection\c_algo.h" />
+    <ClInclude Include="include\collection\c_algorithm.h" />
+    <ClInclude Include="include\collection\c_def.h" />
+    <ClInclude Include="include\collection\c_function.h" />
+    <ClInclude Include="include\collection\c_functional.h" />
+    <ClInclude Include="include\collection\c_iterator.h" />
+    <ClInclude Include="include\collection\c_list.h" />
+    <ClInclude Include="include\collection\c_map.h" />
+    <ClInclude Include="include\collection\c_memory.h" />
+    <ClInclude Include="include\collection\c_pair.h" />
+    <ClInclude Include="include\collection\c_queue.h" />
+    <ClInclude Include="include\collection\c_set.h" />
+    <ClInclude Include="include\collection\c_stack.h" />
+    <ClInclude Include="include\collection\c_tree.h" />
+    <ClInclude Include="include\collection\c_utility.h" />
+    <ClInclude Include="include\collection\c_vector.h" />
+    <ClInclude Include="include\collection\lifo_stack.h" />
+    <ClInclude Include="include\collection\linked_list.h" />
+    <ClInclude Include="include\collection\memento.h" />
+    <ClInclude Include="include\collection\tree_map.h" />
+    <ClInclude Include="include\json\cJSON.h" />
+    <ClInclude Include="include\notepad\menuCmdID.h" />
+    <ClInclude Include="include\notepad\Notepad_plus_msgs.h" />
+    <ClInclude Include="include\notepad\PluginDefinition.h" />
+    <ClInclude Include="include\notepad\PluginInterface.h" />
+    <ClInclude Include="include\notepad\Scintilla.h" />
+    <ClInclude Include="include\sqlFormat.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
