@@ -7,6 +7,8 @@ SQL Formatter plugin for Notepad++
 Just download [sqlformat.dll](https://github.com/sqlparser/isf_notepad/blob/master/bin/sqlFormat.dll?raw=true)
 and put it into Notepad++\plugins directory and then restart Notepad++.
 
+This sql formatter plugin works under Notepad++ v5.1 and later.
+
 ####Usage
 You can format all or any selected SQL in editor by click "Format" via Plugins->SQL Format.
 
