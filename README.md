@@ -24,7 +24,7 @@ This plugin send your SQL to our SQL FaaS server here:
 https://github.com/sqlparser/sql-pretty-printer/wiki/SQL-FaaS#2-api
 
 If you don't want to send your SQL via internet, you may conside to use 
-[sql pretty printer desktop version](http://www.dpriver.com/)
+[sql pretty printer desktop version](http://www.dpriver.com/?ref=github_isf_notepadd)
 
 
 ####Contact
