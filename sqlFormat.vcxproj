@@ -49,15 +49,15 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;CURL_STATICLIB;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;include\notepad;include\json;include\curl;include\collection</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;_DEBUG;CURL_STATICLIB;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\notepad;include\json;include\curl;include\collection;C:\Users\Lenovo\Desktop\notepad\include\dialog</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>lib;..\..\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcurl.lib;ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcurl.lib;ws2_32.lib;Wldap32.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -68,16 +68,17 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;CURL_STATICLIB;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>include;include\notepad;include\json;include\curl;include\collection</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;CURL_STATICLIB;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\notepad;include\json;include\curl;include\collection;C:\Users\Lenovo\Desktop\notepad\include\dialog</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>lib;..\..\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcurl.lib;ws2_32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcurl.lib;ws2_32.lib;Wldap32.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackReserveSize>0</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -97,12 +98,17 @@
     <ClCompile Include="src\c_tree.c" />
     <ClCompile Include="src\c_vector.c" />
     <ClCompile Include="src\Format.cpp" />
+    <ClCompile Include="src\HelpDialog.cpp" />
     <ClCompile Include="src\lifo_stack.c" />
     <ClCompile Include="src\linked_list.c" />
     <ClCompile Include="src\memento.c" />
     <ClCompile Include="src\PluginDefinition.cpp" />
     <ClCompile Include="src\sqlFormat.c" />
+    <ClCompile Include="src\StaticDialog.cpp" />
+    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\SysMsg.cpp" />
     <ClCompile Include="src\tree_map.c" />
+    <ClCompile Include="src\URLCtrl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\collection\collection.h" />
@@ -129,12 +135,22 @@
     <ClInclude Include="include\collection\memento.h" />
     <ClInclude Include="include\collection\tree_map.h" />
     <ClInclude Include="include\json\cJSON.h" />
+    <ClInclude Include="include\notepad\HelpDialog.h" />
     <ClInclude Include="include\notepad\menuCmdID.h" />
     <ClInclude Include="include\notepad\Notepad_plus_msgs.h" />
     <ClInclude Include="include\notepad\PluginDefinition.h" />
     <ClInclude Include="include\notepad\PluginInterface.h" />
+    <ClInclude Include="include\notepad\resource.h" />
     <ClInclude Include="include\notepad\Scintilla.h" />
+    <ClInclude Include="include\notepad\StaticDialog.h" />
+    <ClInclude Include="include\notepad\stdafx.h" />
+    <ClInclude Include="include\notepad\SysMsg.h" />
+    <ClInclude Include="include\notepad\URLCtrl.h" />
+    <ClInclude Include="include\notepad\Window.h" />
     <ClInclude Include="include\sqlFormat.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="include\notepad\sqlFormat.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

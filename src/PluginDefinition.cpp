@@ -18,6 +18,7 @@
 #include "PluginDefinition.h"
 #include "menuCmdID.h"
 #include "sqlFormat.h"
+#include "HelpDialog.h"
 
 //
 // The plugin data that Notepad++ needs
@@ -29,11 +30,15 @@ FuncItem funcItem[nbFunc];
 //
 NppData nppData;
 
+HelpDlg	helpDlg;
+
+HINSTANCE hInstance = NULL;
 //
 // Initialize your plugin data here
 // It will be called while plugin loading   
 void pluginInit(HANDLE hModule)
 {
+	hInstance = (HINSTANCE)hModule;
 }
 
 //
@@ -159,5 +164,6 @@ void format()
 
 void about()
 {
-	::MessageBox(NULL, TEXT("SQL Format Plugin\n\nVersion  1.0.0\n\nCopyright (C) 2002- 2014 Gudu Software"), TEXT("About"), MB_OK);
+	helpDlg.init(hInstance, nppData);
+	helpDlg.doDialog();
 }
