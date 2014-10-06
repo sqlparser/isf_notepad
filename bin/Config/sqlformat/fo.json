@@ -3,12 +3,12 @@
       "selectList":{
         "listInNewline":{
           "sqlid":"9757063",
-          "fmt002_select_list_in_newline":true,
+          "fmt002_select_list_in_newline":false,
           "fmt008_select_list_indent":"2"
         },
         "listStyle":{
           "sqlid":"9757063",
-          "fmt001_select_list_style":"fit_into_one_line",
+          "fmt001_select_list_style":"stacked",
           "fmt003_select_list_comma_option":"after_item",
           "fmt004_select_list_comma_space":"1"
         }
@@ -120,18 +120,18 @@
       },
       "parenthesisOfColumnList":{
         "sqlid":"10084951",
-        "fmt044_insert_column_list_start_parenthesis_in_newline":true,
+        "fmt044_insert_column_list_start_parenthesis_in_newline":false,
         "fmt045_insert_column_list_start_parenthesis_indent":"2",
-        "fmt046_insert_column_list_end_parenthesis_in_newline":true,
+        "fmt046_insert_column_list_end_parenthesis_in_newline":false,
         "fmt047_insert_column_list_end_parenthesis_indent":"2",
         "fmt048_insert_column_list_first_column_in_newline":true,
         "fmt049_insert_column_list_first_column_indent":"2"
       },
       "parenthesisOfValueList":{
         "sqlid":"10238849",
-        "fmt050_insert_value_list_start_parenthesis_in_newline":true,
+        "fmt050_insert_value_list_start_parenthesis_in_newline":false,
         "fmt051_insert_value_list_start_parenthesis_indent":"2",
-        "fmt052_insert_value_list_end_parenthesis_in_newline":true,
+        "fmt052_insert_value_list_end_parenthesis_in_newline":false,
         "fmt053_insert_value_list_end_parenthesis_indent":"2",
         "fmt054_insert_value_list_first_value_in_newline":true,
         "fmt055_insert_value_list_first_value_indent":"2"
@@ -405,7 +405,7 @@
         },
         "tableName":{
           "sqlid":"10219632",
-          "fmt105_case_table_name":"lower"
+          "fmt105_case_table_name":"upper"
         },
         "columnName":{
           "sqlid":"10219672",
