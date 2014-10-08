@@ -35,3 +35,16 @@ http://www.dpriver.com
 support@dpriver.com
 
 https://github.com/sqlparser/isf_notepad
+
+
+####Format options:
+https://github.com/sqlparser/sql-pretty-printer/wiki/SQL-Coding-Standard-and-Guideline
+
+####Links:
+[sql pretty printer desktop version](http://www.dpriver.com/products/sqlpp/desktop_index.php)
+
+[sql pretty printer addin for SQL Server Management Studio](http://www.dpriver.com/products/sqlpp/ssms_index.php)
+
+[sql pretty printer addin for Visual Studio](http://www.dpriver.com/products/sqlpp/vs_index.php)
+
+[sql formatter plugin for Notepad++](https://github.com/sqlparser/isf_eclipse)
