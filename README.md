@@ -47,4 +47,8 @@ https://github.com/sqlparser/sql-pretty-printer/wiki/SQL-Coding-Standard-and-Gui
 
 [sql pretty printer addin for Visual Studio](http://www.dpriver.com/products/sqlpp/vs_index.php)
 
-[sql formatter plugin for Notepad++](https://github.com/sqlparser/isf_eclipse)
+[C client sql formatter](https://github.com/sqlparser/isf_c_client)
+
+[Java client sql formatter](https://github.com/sqlparser/isf_java_client)
+
+[sql formatter plugin for eclipse](https://github.com/sqlparser/isf_eclipse)
