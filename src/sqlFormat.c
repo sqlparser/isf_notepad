@@ -13,7 +13,7 @@ static char * readFile(FILE * pfile)
 {  
 	char * data;  
 	int length;
-	fseek(pfile, 0, SEEK_END);  
+	fseek(pfile, 0, SEEK_END);
 	length = ftell(pfile);  
 	data = (char *)malloc((length + 1) * sizeof(char));  
 	rewind(pfile);  
@@ -156,8 +156,17 @@ char* sqlFormat(char* sqlText)
 	char* response;
 	cJSON *json, *formatItem;
 	char* result = NULL;
+	CString *formatOptions = NULL;
+	FILE * formatOptionsFile = fopen(".\\plugins\\Config\\sqlformat\\fo.json","r");
+	if(formatOptionsFile != NULL){
+		char* content = readFile(formatOptionsFile);
+		formatOptions = CStringNew();
+		CStringAppend(formatOptions, content);
+		free(content);
+		fclose(formatOptionsFile);
+	}
 
-	response = sendPost("http://www.gudusoft.com/format.php",sqlText, NULL);
+	response = sendPost("http://www.gudusoft.com/format.php",sqlText, formatOptions==NULL? NULL: formatOptions->buffer);
 
 	json = cJSON_Parse(response);
 	if(json!=NULL){
@@ -172,8 +181,12 @@ char* sqlFormat(char* sqlText)
 		free(json);
 	}
 
+	if(formatOptions!=NULL)
+		CStringDelete(formatOptions);
+
 	if(response!=NULL)
 		free(response);
+
 	
 	if(result!=NULL)
 		return result;
