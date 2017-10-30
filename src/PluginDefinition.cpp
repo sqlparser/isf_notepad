@@ -130,7 +130,7 @@ DWORD WINAPI ThreadProc(LPVOID lpParameter){
 			delete result;
 		}
 
-		delete pBuffer;
+		delete[] pBuffer;
 
 	}
 	else{
@@ -151,7 +151,7 @@ DWORD WINAPI ThreadProc(LPVOID lpParameter){
 			delete result;
 		}
 
-		delete pBuffer;
+		delete[] pBuffer;
 	}
 	return 0;
 }
